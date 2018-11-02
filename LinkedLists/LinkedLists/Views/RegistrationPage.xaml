@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LinkedLists"
+             x:Class="LinkedLists.RegistrationPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="MintCream">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1"
+                  Margin="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Entry Grid.Row="1"
+                       Placeholder="Username"
+                       PlaceholderColor="#bababa"
+                       FontSize="16"
+                       x:Name="usernameEntry"/>
+                <Entry Grid.Row="2"
+                       Placeholder="Password"
+                       PlaceholderColor="#bababa"
+                       FontSize="16"
+                       x:Name="passEntry"/>
+
+                <Entry Grid.Row="3"
+                       Placeholder="Email"
+                       PlaceholderColor="#bababa"
+                       FontSize="16"
+                       x:Name="emailEntry"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Grid.Row="5">
+                    <Button Text="Register" 
+                            BackgroundColor="#3897F0" 
+                            TextColor="White" 
+                            HeightRequest="50" 
+                            VerticalOptions="Start" 
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="btnRegister"
+                            Clicked="registerClicked"/>
+                </StackLayout>
+            </Grid>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

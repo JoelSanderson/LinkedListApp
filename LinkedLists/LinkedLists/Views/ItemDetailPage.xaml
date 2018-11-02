@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LinkedLists.Views.ItemDetailPage" Title="{Binding Title}">
+    <StackLayout Spacing="15" Padding="15">
+        <Label Text="Camping Checklist" FontSize="Medium" />
+        <Label Text="{Binding Item.ListData}" FontSize="Small" />
+        <Label Text="2. Sleeping Bag" FontSize="Small" />
+        <Label Text="3. Food" FontSize="Small" />
+        <Label Text="4. Water" FontSize="Small" />
+        <Label Text="5. Torch" FontSize="Small" />
+        <BoxView />
+        <BoxView />
+        <BoxView />
+        <BoxView />
+        <BoxView />
+        <BoxView />
+        <Button Text="Edit" />
+        <Button Text="Delete" />
+    </StackLayout>
+</ContentPage>
