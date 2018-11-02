@@ -4,7 +4,7 @@ namespace LinkedLists.Models
 {
     public class Item
     {
-        public string ListId { get; set; }
+        public int ListId { get; set; }
         public string ListTitle { get; set; }
         public object ListType { get; set; }
         public object ListCategory { get; set;  }
@@ -12,6 +12,7 @@ namespace LinkedLists.Models
         public string ListData { get; set; }
         public string ListRating { get; set;  }
         public string ListAuthor { get; set;  }
+        public bool Done { get; set; }
     }
 
 

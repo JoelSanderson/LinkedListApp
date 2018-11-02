@@ -26,7 +26,7 @@ namespace LinkedLists.Droid.Helper
 
         public override void OnCreate(SQLiteDatabase db) {
             //throw new NotImplementedException();SQLiteDatabase db){
-            string query = $"CREATE TABLE {DBHelper.DB_TABLE} (ID INTEGER PRIMARY KEY AUTOINCREMENT, {DBHelper.DB_COLUMN} TEXT NOT NULL;";
+            string query = $"CREATE TABLE {DB_TABLE} (ID INTEGER PRIMARY KEY AUTOINCREMENT, {DB_COLUMN} TEXT NOT NULL;";
 
             db.ExecSQL(query);
         }
@@ -44,7 +44,7 @@ namespace LinkedLists.Droid.Helper
             SQLiteDatabase db = this.WritableDatabase;
             ContentValues values = new ContentValues();
             values.Put(DB_COLUMN, task);
-            db.InsertWithOnConflict(DB_TABLE, null, values, Android.Database.Sqlite.Conflict.Replace);
+            db.InsertWithOnConflict(DB_TABLE, null, values, Conflict.Replace);
             db.Close();
         }
 
