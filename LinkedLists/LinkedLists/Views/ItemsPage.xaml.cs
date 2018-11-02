@@ -14,35 +14,25 @@ using LinkedLists.ViewModels;
 namespace LinkedLists.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ItemsPage : ContentPage
+    public partial class ItemDetailPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        ItemDetailViewModel viewModel;
 
-        public ItemsPage()
+        public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = this.viewModel = viewModel;
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        public ItemDetailPage()
         {
-            var item = args.SelectedItem as Item;
-            if (item == null)
-                return;
+            InitializeComponent();
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            var item = new Item(Guid.NewGuid().ToString(), "Title", ListType.BestOf, ListCategory.Entertainment, ListPrivacy.Private, "", 0, 0);
 
-            // Manually deselect item.
-            ItemsListView.SelectedItem = null;
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            viewModel = new ItemDetailViewModel(item);
+            BindingContext = viewModel;
         }
     }
 }
