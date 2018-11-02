@@ -14,33 +14,17 @@ namespace LinkedLists.Views
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }
-        
-        public NewItemPage()
-        {
-            InitializeComponent();
-
-            object selectedType = listType.SelectedItem;
-            object selectedCategory = listCategory.SelectedItem;
-            object selectedPrivacy = listPrivacy.SelectedItem;
-
-            string title = listTitle.Text;
-            //ListType type = (ListType)Enum.Parse(typeof(ListType), selectedType.ToString());
-            ListType type = ListType.Checklist;
-            //ListCategory category = (ListCategory)Enum.Parse(typeof(ListCategory), selectedCategory.ToString());
-            ListCategory category = ListCategory.Entertainment;
-            //ListPrivacy privacy = (ListPrivacy)Enum.Parse(typeof(ListPrivacy), selectedPrivacy.ToString());
-            ListPrivacy privacy = ListPrivacy.Private;
-            string data = listData.Text;
-
-            Item = new Item(Guid.NewGuid().ToString(), title, type, category, privacy, data, 0, 0);
-
-            BindingContext = this;
-        }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
             await Navigation.PopModalAsync();
+        }
+
+        public NewItemPage()
+        {
+            InitializeComponent();
+
         }
 
         async void OnSaveClicked(object sender, EventArgs e)

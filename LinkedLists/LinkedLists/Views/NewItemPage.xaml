@@ -5,23 +5,19 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            
             <Label Text="Create New List" FontSize="Medium" FontAttributes="Bold"/>
-            
             <Label Text="Title" FontSize="Small" FontAttributes="Bold"/>
-            <Entry x:Name="listTitle" Placeholder="List Title" FontSize="Small" />
-            
+            <Entry Text="{Binding Item.ListTitle}" FontSize="Small" />
             <Label Text="Type" FontSize="Small"  FontAttributes="Bold"/>
-            <Picker x:Name="listType" Title="Select Type" FontSize="Small" >
+            <Picker Title="{Binding Item.ListType}" FontSize="Small" >
                 <Picker.Items>
                     <x:String>Checklist</x:String>
                     <x:String>Best-of</x:String>
                     <x:String>To-do</x:String>
                 </Picker.Items>
             </Picker>
-            
             <Label Text="Category" FontSize="Small"  FontAttributes="Bold"/>
-            <Picker x:Name="listCategory" Title="Select Category" FontSize="Small" >
+            <Picker Title="{Binding Item.ListCategory}" FontSize="Small" >
                 <Picker.Items>
                     <x:String>Entertainment</x:String>
                     <x:String>Food</x:String>
@@ -31,18 +27,15 @@
                     <x:String>Outdoors</x:String>
                 </Picker.Items>
             </Picker>
-            
             <Label Text="Privacy" FontSize="Small"  FontAttributes="Bold"/>
-            <Picker x:Name="listPrivacy" Title="Select Privacy" FontSize="Small" >
+            <Picker Title="{Binding Item.ListPrivacy}" FontSize="Small" >
                 <Picker.Items>
                     <x:String>Private</x:String>
                     <x:String>Public</x:String>
                 </Picker.Items>
             </Picker>
-            
             <Label Text="Items" FontSize="Small"  FontAttributes="Bold"/>
-            <Editor x:Name="listData" AutoSize="TextChanges" FontSize="Small"/>
-            
+            <Editor AutoSize="TextChanges" Text="{Binding Item.ListItems}" FontSize="Small"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
