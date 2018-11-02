@@ -11,15 +11,15 @@ namespace LinkedLists.Services
         
         List<Item> items;
 
-        public MockDataStore()
+         public MockDataStore()
         {
             items = new List<Item>();
             var mockItems = new List<Item>
             {
-                new Item { ListId = Guid.NewGuid().ToString(), ListTitle = "Camping Checklist", ListData="1. Tent"},
-                new Item { ListId = Guid.NewGuid().ToString(), ListTitle = "Best Movies", ListData="list items" },
-                new Item { ListId = Guid.NewGuid().ToString(), ListTitle = "Must Have Ingredients", ListData="list items" },
-                new Item { ListId = Guid.NewGuid().ToString(), ListTitle = "Most Popular Sports", ListData="list items" }
+                new Item (Guid.NewGuid().ToString(), "Camping Checklist", ListType.Checklist, ListCategory.Outdoors, ListPrivacy.Private, "", 0, 0),
+                new Item (Guid.NewGuid().ToString(), "Best Movies", ListType.BestOf, ListCategory.Entertainment, ListPrivacy.Private, "", 0, 0),
+                new Item (Guid.NewGuid().ToString(), "Must Have Ingredients", ListType.Checklist, ListCategory.Food, ListPrivacy.Private, "", 0, 0),
+                new Item (Guid.NewGuid().ToString(), "Most Popular Sports", ListType.BestOf, ListCategory.Sport, ListPrivacy.Private, "", 0, 0)
             };
 
             foreach (var item in mockItems)
