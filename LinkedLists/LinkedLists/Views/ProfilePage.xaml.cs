@@ -29,6 +29,11 @@ namespace LinkedLists.Views
             {
                 await DisplayAlert("Alert ", "Please enter your username and password", "OK");
             }
+
+            else if (name != "admin" && pass != "admin")
+            {
+                await DisplayAlert("Alert ", "Incorrect Credentials", "OK");
+            }
         }
     }
 }

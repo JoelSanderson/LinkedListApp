@@ -8,7 +8,7 @@ namespace LinkedLists.Services
 {
     public class MockDataStore : IDataStore<Item>
     {
-        /*
+        
         List<Item> items;
 
         public MockDataStore()
@@ -60,30 +60,7 @@ namespace LinkedLists.Services
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
-        }*/
-        public Task<bool> AddItemAsync(Item item)
-        {
-            throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteItemAsync(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Item> GetItemAsync(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> UpdateItemAsync(Item item)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

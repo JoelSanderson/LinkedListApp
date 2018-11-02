@@ -4,7 +4,7 @@ namespace LinkedLists.Models
 {
     public class Item
     {
-        public int ListId { get; set; }
+        public string ListId { get; set; }
         public string ListTitle { get; set; }
         public object ListType { get; set; }
         public object ListCategory { get; set;  }

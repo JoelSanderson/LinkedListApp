@@ -38,15 +38,19 @@ namespace LinkedLists.Database
             throw new NotImplementedException();
         }
 
-        public Task<Item> GetItemAsync(int id)
+        public Task<Item> GetItemAsync(string id)
         {
             return database.Table<Item>().Where(i => i.ListId == id).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveItemAsync(Item item)
+        /*
+        public Task<string> SaveItemAsync(Item item)
         {
+            item.ListId = int.Parse(item.ListId);
+
             if (item.ListId != 0)
             {
+
                 return database.UpdateAsync(item);
             }
             else
@@ -54,6 +58,7 @@ namespace LinkedLists.Database
                 return database.InsertAsync(item);
             }
         }
+        */
 
         public Task<int> DeleteItemAsync(Item item)
         {
